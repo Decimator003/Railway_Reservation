@@ -28,4 +28,20 @@ public class Booking {
     public void cancelBooking() {
         this.status = "CANCELLED";
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getBookingId() {
+        return bookingId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public int getSeatNumber() {
+        return seatNumber;
+    }
 }

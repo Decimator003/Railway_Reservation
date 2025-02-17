@@ -41,4 +41,16 @@ public class Train {
         }
         return false;
     }
+
+    public String getTrainName() {
+        return trainName;
+    }
+
+    public String getTrainId() {
+        return trainId;
+    }
+
+    public int getTotalSeats() {
+        return totalSeats;
+    }
 }

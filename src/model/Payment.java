@@ -13,6 +13,18 @@ public class Payment {
         this.paymentStatus = "SUCCESS";
     }
 
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public String getBookingId() {
+        return bookingId;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
     public String getPaymentStatus() {
         return paymentStatus;
     }

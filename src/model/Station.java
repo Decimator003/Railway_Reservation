@@ -14,4 +14,12 @@ public class Station {
     public String getStationName() {
         return stationName;
     }
+
+    public String getStationId() {
+        return stationId;
+    }
+
+    public String getLocation() {
+        return location;
+    }
 }

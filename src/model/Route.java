@@ -22,4 +22,12 @@ public class Route {
     public Station getEndStation() {
         return endStation;
     }
+
+    public List<Station> getIntermediateStations() {
+        return intermediateStations;
+    }
+
+    public String getRouteId() {
+        return routeId;
+    }
 }

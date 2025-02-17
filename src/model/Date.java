@@ -11,6 +11,14 @@ public class Date {
         this.arrivalTime = arrivalTime;
     }
 
+    public String getDepartureTime() {
+        return departureTime;
+    }
+
+    public String getArrivalTime() {
+        return arrivalTime;
+    }
+
     public String getJourneyDate() {
         return journeyDate;
     }
