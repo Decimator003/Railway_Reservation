@@ -9,6 +9,7 @@ public class Train {
     private int totalSeats;
     private int availableSeats;
     private Map<Integer, String> bookedSeats; // SeatNumber -> BookingId
+    private Route route;
 
     public Train(String trainId, String trainName, int totalSeats) {
         this.trainId = trainId;
@@ -22,7 +23,7 @@ public class Train {
         return availableSeats;
     }
 
-    public boolean bookSeat(int seatNumber, String bookingId) {
+    public synchronized boolean bookSeat(int seatNumber, String bookingId) {
         if (availableSeats > 0 && !bookedSeats.containsKey(seatNumber)) {
             bookedSeats.put(seatNumber, bookingId);
             availableSeats--;
@@ -31,7 +32,8 @@ public class Train {
         return false;
     }
 
-    public boolean cancelSeat(String bookingId) {
+    // Synchronized method to cancel a seat
+    public synchronized boolean cancelSeat(String bookingId) {
         for (Map.Entry<Integer, String> entry : bookedSeats.entrySet()) {
             if (entry.getValue().equals(bookingId)) {
                 bookedSeats.remove(entry.getKey());
@@ -52,5 +54,13 @@ public class Train {
 
     public int getTotalSeats() {
         return totalSeats;
+    }
+
+    public Route getRoute() {
+        return route;
+    }
+
+    public void setRoute(Route route) {
+        this.route = route;
     }
 }
